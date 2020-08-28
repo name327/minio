@@ -229,9 +229,9 @@ func parsePreSignV4(query url.Values, region string, stype serviceType) (psv pre
 	}
 
 	// Check if Expiry time is less than 7 days (value in seconds).
-	if preSignV4Values.Expires.Seconds() > 604800 {
-		return psv, ErrMaximumExpires
-	}
+//	if preSignV4Values.Expires.Seconds() > 604800 {
+//		return psv, ErrMaximumExpires
+//	}
 
 	// Save signed headers.
 	preSignV4Values.SignedHeaders, aec = parseSignedHeader("SignedHeaders=" + query.Get(xhttp.AmzSignedHeaders))
